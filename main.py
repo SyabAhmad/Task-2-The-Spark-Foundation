@@ -12,6 +12,7 @@ print(data.columns)
 xTrain, xTest, yTrain, yTest = train_test_split(data[["SepalLengthCm", "SepalWidthCm"] ],data["Species"], test_size=0.25)
 
 kmean = KMeans(n_clusters=3)
+
 kmean.fit(xTrain)
 
 predection = kmean.predict(xTest)
@@ -19,3 +20,5 @@ predection = kmean.predict(xTest)
 plt.scatter(xTest["SepalLengthCm"], xTest["SepalWidthCm"], c=predection)
 
 plt.show()
+
+print(predection)
